@@ -26,21 +26,20 @@ public class Coordinates {
 
 	@Override
 	public boolean equals(Object o){		
-		if(o != null && this != null){ 		
-			if(o instanceof Coordinates) {
+		if (o != null) { 		
+			if (o instanceof Coordinates) {
 				Coordinates c  = (Coordinates) o;
-				if(c.x == this.x && c.y == this.y && c.z == this.z) {
+				if (c.x == this.x && c.y == this.y && c.z == this.z) {
 					return true;
 				}
 			}
 		}
-		return (o == null && this == null);
-	
+		return false;	
 	}
 	
 	@Override
 	public String toString() {
-		return "Coordinates [x=" + x + ", y=" + y + ", z=" + z + "] \n";
+		return "Coordinates [x=" + x + ", y=" + y + ", z=" + z + "]";
 	}
 
 }

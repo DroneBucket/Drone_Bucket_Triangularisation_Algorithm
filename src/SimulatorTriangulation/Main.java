@@ -7,7 +7,7 @@ public class Main {
 		
 		for(int i = 0; i < 1000; i++) {
 			Simulation s = new Simulation();
-			if(s.testCalculPosition()) {
+			if(s.testComputePosition()) {
 				count++;
 			}
 		}
