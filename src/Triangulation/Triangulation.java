@@ -17,7 +17,7 @@ public class Triangulation {
 		for (int i = 0; i < coordinates.length; i++) {
 			double dist = (Math.pow(coordinates[i].getX(), 2)
 					+ Math.pow(coordinates[i].getY(), 2) + Math.pow(
-					coordinates[i].getZ(), 2));
+							coordinates[i].getZ(), 2));
 			matrix[i][0] = -2 * coordinates[i].getX();
 			matrix[i][1] = -2 * coordinates[i].getY();
 			matrix[i][2] = -2 * coordinates[i].getZ();
@@ -25,7 +25,7 @@ public class Triangulation {
 		}
 		return matrix;
 	}
-	
+
 	public static void printMatrix(double[][] matrix){
 		for(int i = 0; i < matrix.length; i++ ) {
 			for(int j = 0; j < matrix[0].length; j++ ) {
@@ -35,7 +35,7 @@ public class Triangulation {
 		}
 		System.out.println("");
 	}
-	
+
 
 	public static double[][] createMatrixCompute(double[][] matrix) {
 		double[][] matrixCompute = new double[3][4];
@@ -48,11 +48,18 @@ public class Triangulation {
 		return matrixCompute;
 	}
 
-	public static Coordinates triangulate(int[][] distance,
+	public static double computeDistance (Coordinates c, Coordinates c1) {
+		double x = Math.pow(c.getX() - c1.getX(), 2);
+		double y = Math.pow(c.getY() - c1.getY(), 2);
+		double z = Math.pow(c.getZ()- c1.getZ(), 2);
+		return Math.sqrt(x+y+z);
+	}
+
+	public static Coordinates triangulate(double[][] distance,
 			Coordinates[] coordinates) {
-			
+
 		return new Coordinates(0, 0, 0);
 	}
-	
+
 
 }
