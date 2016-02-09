@@ -8,7 +8,7 @@ import Triangulation.Triangulation;
 
 public class Main {
 
-	private static final int nbDrones = 4;
+	private static final int nbDrones = 5;
 	private final static Object lock = new Object();
 
 	public static void main(String[] args) throws InterruptedException {

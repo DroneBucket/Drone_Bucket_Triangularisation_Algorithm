@@ -48,7 +48,7 @@ public class Drone {
 	}
 
 	public Coordinates computePosition(double[] distance) {
-		Coordinates[] tmp = new Coordinates[3];
+		Coordinates[] tmp = new Coordinates[4];
 		int count = 0;
 		synchronized (lock) {
 			Iterator<Entry<Integer, Coordinates>> it = neighbors.entrySet().iterator();
@@ -59,8 +59,8 @@ public class Drone {
 			}
 
 			double[][] matrix = Triangulation.createMatrix(tmp, distance);
-			//double[][] matrixCompute = Triangulation.createMatrixCompute(matrix);
-			double[] result = GaussianElimination.gauss(matrix);
+			double[][] matrixCompute = Triangulation.createMatrixCompute(matrix);
+			double[] result = GaussianElimination.gauss(matrixCompute);
 			return new Coordinates(Math.round(result[0]), Math.round(result[1]), Math.round(result[2]));
 		}
 		
